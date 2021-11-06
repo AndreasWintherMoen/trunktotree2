@@ -1,9 +1,13 @@
 <template>
-  <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
+  <div>
+    <div id="nav" class="bg-red-200">
+      <router-link to="/">Hjem</router-link>
+      <router-link to="/konto">Konto</router-link>
+      <router-link to="/sparemal">Sparemål</router-link>
+      <router-link to="/traer">Trær</router-link>
+    </div>
+    <router-view/>
   </div>
-  <router-view/>
 </template>
 
 <style>
