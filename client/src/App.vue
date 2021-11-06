@@ -1,10 +1,10 @@
 <template>
   <div>
     <div id="nav" class="bg-red-200">
-      <router-link to="/">Hjem</router-link>
-      <router-link to="/konto">Konto</router-link>
-      <router-link to="/sparemal">Sparemål</router-link>
-      <router-link to="/traer">Trær</router-link>
+      <router-link to="/">Home</router-link>
+      <router-link to="/account">Account</router-link>
+      <router-link to="/challenges">Challenges</router-link>
+      <router-link to="/forest">My Forest</router-link>
     </div>
     <router-view />
   </div>

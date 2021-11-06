@@ -6,6 +6,11 @@ const routes = [
     name: "Home",
     component: () => import("../components/pages/Dashboard.vue"),
   },
+  {
+    path: "/challenges",
+    name: "Challenges",
+    component: () => import("../components/pages/Challenges.vue"),
+  },
 ];
 
 const router = createRouter({
