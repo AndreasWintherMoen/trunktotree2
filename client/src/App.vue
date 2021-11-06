@@ -6,7 +6,7 @@
       <router-link to="/sparemal">Sparemål</router-link>
       <router-link to="/traer">Trær</router-link>
     </div>
-    <router-view/>
+    <router-view />
   </div>
 </template>
 
