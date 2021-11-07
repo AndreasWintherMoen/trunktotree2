@@ -1,8 +1,7 @@
 <template>
-<div>
-  <div :id="chartid"></div>
-  {{}}
-</div>
+  <div>
+    <div :id="chartid" class="capitalize"></div>
+  </div>
 </template>
 
 <script>

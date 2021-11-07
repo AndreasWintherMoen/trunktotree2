@@ -23,71 +23,13 @@
           flex
           sm:hidden
           flex-grow flex-wrap
-          justify-end
+          justify-center
           content-center
           px-8
         "
       >
-        <svg
-          @click="toggleSidebar"
-          viewBox="0 0 100 80"
-          width="40"
-          height="40"
-          class="
-            rounded-full
-            cursor-pointer
-            duration-150
-            hover:bg-gray-100 hover:bg-opacity-50
-          "
-        >
-          <rect x="15" y="15" width="70" height="10" fill="#2c3e50"></rect>
-          <rect x="15" y="35" width="70" height="10" fill="#2c3e50"></rect>
-          <rect x="15" y="55" width="70" height="10" fill="#2c3e50"></rect>
-        </svg>
+        <h3 class="font-bold text-lg">EcoreHealth+</h3>
       </div>
-    </div>
-    <div
-      v-if="sidebar"
-      class="
-        flex
-        sm:hidden
-        fixed
-        w-full
-        h-full
-        gap-4
-        flex-col
-        px-8
-        py-4
-        bg-gray-700
-        main-sidebar
-        z-50
-      "
-      :class="sidebar ? ['left-0'] : ['left-full']"
-    >
-      <router-link
-        @click="toggleSidebar"
-        class="rounded shadow-lg dnb-green py-2"
-        to="/"
-        >Home</router-link
-      >
-      <router-link
-        @click="toggleSidebar"
-        class="rounded shadow-lg dnb-green py-2"
-        to="/account"
-        >Account</router-link
-      >
-      <router-link
-        @click="toggleSidebar"
-        class="rounded shadow-lg dnb-green py-2"
-        to="/challenges"
-        >Challenges</router-link
-      >
-      <router-link
-        @click="toggleSidebar"
-        class="rounded shadow-lg dnb-green py-2"
-        to="/forest"
-        >My Forest</router-link
-      >
     </div>
     <router-view />
   </div>

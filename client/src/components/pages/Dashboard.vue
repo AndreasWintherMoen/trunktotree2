@@ -1,7 +1,7 @@
 <template>
   <div class="p-3">
-    <h1 class="text-lg font-bold m-2">Mine Penger</h1>
-    <div class="divider"></div>
+    <!--<h1 class="text-lg font-bold m-2">My spendings</h1>
+    <div class="divider"></div>-->
     <div class="flex flex-col gap-3">
       <spendings-card />
       <bar-chart-card />
