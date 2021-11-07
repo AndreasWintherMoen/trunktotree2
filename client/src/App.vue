@@ -1,13 +1,13 @@
 <template>
   <div>
-    <div class="bg-green-200 h-12 flex content-center flex-grow">
+    <div class="dnb-green h-12 flex content-center flex-grow">
       <div id="nav" class="hidden sm:flex flex-grow flex-wrap justify-between content-center px-8">
         <router-link to="/">Home</router-link>
         <router-link to="/account">Account</router-link>
         <router-link to="/challenges">Challenges</router-link>
         <router-link to="/forest">My Forest</router-link>
       </div>
-      <div id="nav" class="flex sm:hidden flex-grow flex-wrap justify-between content-center px-8">
+      <div id="nav" class="flex sm:hidden flex-grow flex-wrap justify-end content-center px-8">
         <svg @click="toggleSidebar" viewBox="0 0 100 80" width="40" height="40" class="rounded-full cursor-pointer duration-150 hover:bg-gray-100 hover:bg-opacity-50">
           <rect x="15" y="15" width="70" height="10" fill="#2c3e50"></rect>
           <rect x="15" y="35" width="70" height="10" fill="#2c3e50"></rect>
@@ -15,15 +15,16 @@
         </svg>
       </div>
     </div>
-    <div v-if="sidebar" class="flex sm:hidden gap-2 flex-col px-8 pt-2">
-        <router-link @click="toggleSidebar" class="rounded bg-green-200 py-2" to="/">Home</router-link>
-        <router-link @click="toggleSidebar" class="rounded bg-green-200 py-2" to="/account">Account</router-link>
-        <router-link @click="toggleSidebar" class="rounded bg-green-200 py-2" to="/challenges">Challenges</router-link>
-        <router-link @click="toggleSidebar" class="rounded bg-green-200 py-2"  to="/forest">My Forest</router-link>
+    <div v-if="sidebar" class="flex sm:hidden fixed w-full h-full gap-4 flex-col px-8 py-4 duration-200 bg-gray-700 main-sidebar"
+    :class="sidebar ? ['left-0'] : ['left-full']">
+        <router-link @click="toggleSidebar" class="rounded dnb-green py-2" to="/">Home</router-link>
+        <router-link @click="toggleSidebar" class="rounded dnb-green py-2" to="/account">Account</router-link>
+        <router-link @click="toggleSidebar" class="rounded dnb-green py-2" to="/challenges">Challenges</router-link>
+        <router-link @click="toggleSidebar" class="rounded dnb-green py-2"  to="/forest">My Forest</router-link>
       </div>
     <router-view />
   </div>
-</template>
+</template>#
 
 <script>
 import { ref } from 'vue';
@@ -56,8 +57,12 @@ body {
   color: #2c3e50;
 }
 
-#nav svg {
-  color: ;
+.dnb-green {
+  background-color: #a5e1d2;
+}
+
+.main-sidebar {
+  transition: left 0.5s;
 }
 
 #nav a.router-link-exact-active {
