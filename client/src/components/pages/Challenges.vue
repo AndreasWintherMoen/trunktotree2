@@ -1,11 +1,14 @@
 <template>
   <div class="p-4">
     <h2 class="font-bold text-xl pb-4">Challenges</h2>
-    <challenge
-      :challenge="challenge"
-      v-for="(challenge, i) in challenges"
-      :key="i"
-    />
+    <div class="flex flex-col gap-3">
+      <challenge
+        class="cursor-pointer"
+        :challenge="challenge"
+        v-for="(challenge, i) in challenges"
+        :key="i"
+      />
+    </div>
   </div>
 </template>
 
