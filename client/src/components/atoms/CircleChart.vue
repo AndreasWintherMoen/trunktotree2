@@ -1,17 +1,18 @@
 <template>
-  <div id="chart"></div>
+  <div :id="chartid"></div>
 </template>
 
 <script>
 import ApexCharts from "apexcharts";
 
 export default {
+  props: ['chartid'],
   mounted() {
     var month = new Date().toLocaleString("default", { month: "long" });
 
     var options = {
       chart: {
-        height: "300",
+        height: 300,
         type: "radialBar",
       },
       series: [67],
@@ -51,8 +52,7 @@ export default {
       },
       labels: [`${month} Spending`],
     };
-
-    var chart = new ApexCharts(document.querySelector("#chart"), options);
+    var chart = new ApexCharts(document.querySelector(`#${this.chartid}`), options);
 
     chart.render();
   },

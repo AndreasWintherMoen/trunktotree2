@@ -1,9 +1,9 @@
 <template>
-  <div class="p-1 rounded-lg shadow" id="haakon">
+  <div class="px-3 pt-3 rounded-lg shadow" id="haakon">
     <h1 class="text-white text-left text-xl h-auto">
       How financially healthy am I?
     </h1>
-    <circle-chart />
+    <circle-chart :chartid="'circlechart'" />
   </div>
 </template>
 
@@ -19,10 +19,7 @@ export default {
 
 <style>
 #haakon {
-  background: radial-gradient(
-    circle,
-    rgba(0, 255, 68, 1) -45%,
-    rgba(58, 63, 175, 1) 60%
-  );
+  background: linear-gradient(45deg, #13f1fc, #0470DC)
+  /*background: radial-gradient(circle, #13f1fc 0%,#0470DC 100%)*/
 }
 </style>
