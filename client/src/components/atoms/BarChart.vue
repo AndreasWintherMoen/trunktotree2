@@ -15,7 +15,8 @@ export default {
           chart: {
           height: 350,
           type: 'bar',
-          toolbar: {show: false}
+          toolbar: {show: false},
+          foreColor: 'white'
         },
         plotOptions: {
           bar: {
