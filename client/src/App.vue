@@ -15,16 +15,16 @@
         </svg>
       </div>
     </div>
-    <div v-if="sidebar" class="flex sm:hidden fixed w-full h-full gap-4 flex-col px-8 py-4 duration-200 bg-gray-700 main-sidebar"
+    <div v-if="sidebar" class="flex sm:hidden fixed w-full h-full gap-4 flex-col px-8 py-4 bg-gray-700 main-sidebar"
     :class="sidebar ? ['left-0'] : ['left-full']">
-        <router-link @click="toggleSidebar" class="rounded dnb-green py-2" to="/">Home</router-link>
-        <router-link @click="toggleSidebar" class="rounded dnb-green py-2" to="/account">Account</router-link>
-        <router-link @click="toggleSidebar" class="rounded dnb-green py-2" to="/challenges">Challenges</router-link>
-        <router-link @click="toggleSidebar" class="rounded dnb-green py-2"  to="/forest">My Forest</router-link>
+        <router-link @click="toggleSidebar" class="rounded shadow-lg dnb-green py-2" to="/">Home</router-link>
+        <router-link @click="toggleSidebar" class="rounded shadow-lg dnb-green py-2" to="/account">Account</router-link>
+        <router-link @click="toggleSidebar" class="rounded shadow-lg dnb-green py-2" to="/challenges">Challenges</router-link>
+        <router-link @click="toggleSidebar" class="rounded shadow-lg dnb-green py-2"  to="/forest">My Forest</router-link>
       </div>
     <router-view />
   </div>
-</template>#
+</template>
 
 <script>
 import { ref } from 'vue';
