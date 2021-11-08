@@ -66,10 +66,8 @@ export default {
     },
     filteredCategories() {
       return Object.values(CATEGORIES).filter(
-        (c) =>
-          c !== CATEGORIES.ALL_CATEGORIES &&
-          c !== CATEGORIES.Salary &&
-          moneySpent(this.monthSelected, c) > 1
+        (c) => c !== CATEGORIES.ALL_CATEGORIES && c !== CATEGORIES.Salary
+        // moneySpent(this.monthSelected, c) > 1
       );
     },
     chartSeries() {
