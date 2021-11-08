@@ -6,20 +6,22 @@
 
 <script>
 import ApexCharts from "apexcharts";
+import moneySpent, { CATEGORIES } from "../../../util/moneySpent";
 
 export default {
   props: ["chartid"],
+  data() {
+    return {
+      chart: undefined,
+    };
+  },
   mounted() {
-    const month = new Date().toLocaleString("default", { month: "long" });
-    const moneySpent = Math.random() * 100000;
-    const moneyLimit = (moneySpent + Math.random() * 100000) / 100;
-
     const options = {
       chart: {
         height: 300,
         type: "radialBar",
       },
-      series: [moneySpent / moneyLimit],
+      series: [this.moneyTotal / this.moneyLimit],
       colors: ["#0ba29d"],
       plotOptions: {
         radialBar: {
@@ -42,8 +44,8 @@ export default {
               color: "#fff",
               fontSize: "1.25rem",
               show: true,
-              formatter: function () {
-                return moneySpent.toFixed(2) + " NOK";
+              formatter: () => {
+                return this.moneyTotal.toFixed(2) + " NOK";
               },
               offsetY: -20,
             },
@@ -55,14 +57,34 @@ export default {
           },
         },
       },
-      labels: [`${month} Spending`],
+      labels: [`${this.monthSelected} Spending`],
     };
-    var chart = new ApexCharts(
+    this.chart = new ApexCharts(
       document.querySelector(`#${this.chartid}`),
       options
     );
 
-    chart.render();
+    this.chart.render();
+  },
+  computed: {
+    monthSelected() {
+      return this.$store.state.monthSelected;
+    },
+    moneyTotal() {
+      return moneySpent(this.monthSelected, CATEGORIES.ALL_CATEGORIES);
+    },
+    // TODO: Calculate moneyLimit properly
+    moneyLimit() {
+      return (this.moneyTotal + Math.random() * 100000) / 100;
+    },
+  },
+  watch: {
+    monthSelected() {
+      this.chart.updateOptions({
+        series: [this.moneyTotal / this.moneyLimit],
+        labels: [`${this.monthSelected} Spending`],
+      });
+    },
   },
 };
 </script>
