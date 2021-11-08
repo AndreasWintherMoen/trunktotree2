@@ -1,6 +1,11 @@
 import data from "../../data/kontoutskrift.json";
 
-const ACCOUNT_ID = 100000;
+// possible account IDs from JSON data
+const accounts = [
+  100000, 100003, 100006, 100009, 100012, 100015, 100018, 100021, 100024,
+  100027,
+];
+const ACCOUNT_ID = accounts[Math.floor(Math.random() * accounts.length)];
 
 export const MONTHS = {
   January: "January",
