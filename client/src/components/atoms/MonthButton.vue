@@ -1,7 +1,8 @@
 <template>
   <div
-    :class="clicked ? active : unactive"
+    :class="isActive ? active : unactive"
     class="inline-block cursor-pointer rounded-2xl"
+    @click="updateMonth"
   >
     <p class="m-2 text-white">{{ month }}</p>
   </div>
@@ -10,14 +11,21 @@
 <script>
 export default {
   props: ["clicked", "month"],
+  computed: {
+    isActive() {
+      return this.$store.state.monthSelected === this.month;
+    },
+  },
   data() {
     return {
       active: "bg-green-900 shadow-md",
       unactive: "bg-green-500 shadow-xl",
     };
   },
-  setClicked() {
-    this.state.clicked = !this.state.clicked;
+  methods: {
+    updateMonth() {
+      this.$store.commit("setMonth", this.month);
+    },
   },
 };
 </script>

@@ -3,11 +3,9 @@
     <!--<h1 class="m-2 text-lg font-bold">My spendings</h1>
     <div class="divider"></div>-->
     <div class="flex flex-col gap-3">
-      <div>
-        <month-button :month="'hei'" />
-      </div>
+      <month-selector />
       <spendings-card />
-      <bar-chart-card :monthSelected="monthSelected" />
+      <bar-chart-card />
     </div>
   </div>
 </template>
@@ -16,19 +14,17 @@
 import SpendingsCard from "../molecules/SpendingsCard.vue";
 /*import LineChartCard from "../molecules/LineChartCard.vue";*/
 import BarChartCard from "../molecules/BarChartCard.vue";
-import MonthButton from "../atoms/MonthButton.vue";
+import MonthSelector from "../molecules/MonthSelector.vue";
 
 export default {
   data() {
-    return {
-      monthSelected: new Date().toLocaleString("default", { month: "long" }),
-    };
+    return {};
   },
   components: {
     SpendingsCard,
     BarChartCard,
     /*LineChartCard,*/
-    MonthButton,
+    MonthSelector,
   },
 };
 </script>
