@@ -6,45 +6,6 @@
 import ApexCharts from "apexcharts";
 import moneySpent, { CATEGORIES } from "../../../util/moneySpent";
 
-const initChart = (seriesData, categories, id) => {
-  const options = {
-    series: [
-      {
-        data: seriesData,
-      },
-    ],
-    chart: {
-      height: 350,
-      type: "bar",
-      toolbar: { show: false },
-      foreColor: "white",
-    },
-    plotOptions: {
-      bar: {
-        columnWidth: "45%",
-        distributed: true,
-      },
-    },
-    dataLabels: {
-      enabled: false,
-    },
-    legend: {
-      show: false,
-    },
-    xaxis: {
-      categories: categories,
-      labels: {
-        style: {
-          fontSize: "12px",
-        },
-      },
-    },
-  };
-
-  const chart = new ApexCharts(document.querySelector(`#${id}`), options);
-  return chart;
-};
-
 export default {
   props: ["chartid"],
   data() {
@@ -53,11 +14,44 @@ export default {
     };
   },
   mounted() {
-    this.chart = initChart(
-      this.chartSeries,
-      this.filteredCategories,
-      this.chartid
+    const options = {
+      series: [
+        {
+          data: this.chartSeries,
+        },
+      ],
+      chart: {
+        height: 350,
+        type: "bar",
+        toolbar: { show: false },
+        foreColor: "white",
+      },
+      plotOptions: {
+        bar: {
+          columnWidth: "45%",
+          distributed: true,
+        },
+      },
+      dataLabels: {
+        enabled: false,
+      },
+      legend: {
+        show: false,
+      },
+      xaxis: {
+        categories: this.filteredCategories,
+        labels: {
+          style: {
+            fontSize: "12px",
+          },
+        },
+      },
+    };
+    this.chart = new ApexCharts(
+      document.querySelector(`#${this.chartid}`),
+      options
     );
+
     this.chart.render();
   },
   computed: {
