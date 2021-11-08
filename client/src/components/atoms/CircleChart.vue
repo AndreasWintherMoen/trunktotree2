@@ -8,7 +8,7 @@
 import ApexCharts from "apexcharts";
 
 export default {
-  props: ['chartid'],
+  props: ["chartid"],
   mounted() {
     const month = new Date().toLocaleString("default", { month: "long" });
     const moneySpent = Math.random() * 100000;
@@ -19,7 +19,7 @@ export default {
         height: 300,
         type: "radialBar",
       },
-      series: [(moneySpent / moneyLimit)],
+      series: [moneySpent / moneyLimit],
       colors: ["#0ba29d"],
       plotOptions: {
         radialBar: {
@@ -45,7 +45,7 @@ export default {
               formatter: function () {
                 return moneySpent.toFixed(2) + " NOK";
               },
-              offsetY: -20
+              offsetY: -20,
             },
             name: {
               offsetY: 20,
@@ -57,7 +57,10 @@ export default {
       },
       labels: [`${month} Spending`],
     };
-    var chart = new ApexCharts(document.querySelector(`#${this.chartid}`), options);
+    var chart = new ApexCharts(
+      document.querySelector(`#${this.chartid}`),
+      options
+    );
 
     chart.render();
   },

@@ -4,14 +4,24 @@
 
 <script>
 import ApexCharts from "apexcharts";
+import moneySpent, { CATEGORIES } from "../../../util/moneySpent";
 
 export default {
-  props: ["chartid"],
+  props: ["chartid", "monthSelected"],
   mounted() {
+    const filteredCategories = Object.values(CATEGORIES).filter(
+      (c) =>
+        c !== CATEGORIES.ALL_CATEGORIES &&
+        c !== CATEGORIES.Salary &&
+        moneySpent(this.$props.monthSelected, c) > 1
+    );
+
     const options = {
       series: [
         {
-          data: [4500, 423, 999],
+          data: filteredCategories.map((cat) => {
+            return moneySpent(this.$props.monthSelected, cat);
+          }),
         },
       ],
       chart: {
@@ -33,7 +43,7 @@ export default {
         show: false,
       },
       xaxis: {
-        categories: [["Food"], ["Transport"], ["Other"]],
+        categories: filteredCategories,
         labels: {
           style: {
             fontSize: "12px",

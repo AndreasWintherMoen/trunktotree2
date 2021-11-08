@@ -88,6 +88,7 @@ const getMoneySpent = (month, category) => {
   );
 };
 
+getMoneySpent(MONTHS.YEAR, CATEGORIES);
 export default getMoneySpent;
 
 // ***********
