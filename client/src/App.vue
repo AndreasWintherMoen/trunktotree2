@@ -30,20 +30,20 @@
             alt="Home"
         /></router-link>
         <router-link
-          to="/economichealth"
+          to="/economicalhealth"
           class="rounded-full bg-opacity-50 bg-green-400 p-1.5"
           ><img
             class="nav-img"
-            :src="`${publicPath}home-outline.png`"
-            alt="Economic Health"
+            :src="`${publicPath}account-cash-outline.png`"
+            alt="Economical Health"
         /></router-link>
         <router-link
-          to="/ecologichealth"
+          to="/ecologicalhealth"
           class="rounded-full bg-opacity-50 bg-green-400 p-1.5"
           ><img
             class="nav-img"
-            :src="`${publicPath}home-outline.png`"
-            alt="Ecologic Health"
+            :src="`${publicPath}sprout-outline.png`"
+            alt="Ecological Health"
         /></router-link>
         <router-link
           to="/insights"
