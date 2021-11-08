@@ -3,13 +3,13 @@ import { createRouter, createWebHistory } from "vue-router";
 const routes = [
   {
     path: "/",
-    name: "Home",
+    name: "Economic health",
     component: () => import("../components/pages/Dashboard.vue"),
   },
   {
-    path: "/challenges",
-    name: "Challenges",
-    component: () => import("../components/pages/Challenges.vue"),
+    path: "/insights",
+    name: "Insights",
+    component: () => import("../components/pages/Insights.vue"),
   },
   {
     path: "/map",

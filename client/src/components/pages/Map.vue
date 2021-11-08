@@ -1,7 +1,7 @@
 <template>
-  <div class="p-3">
-    <h1 class="text-lg font-bold m-2">My spendings</h1>
-    <div id="map" class="overflow-hidden relative"></div>
+  <div class="custom-height-overflow-thing">
+    <div id="map" class="overflow-hidden w-full relative">
+    </div>
   </div>
 </template>
 
@@ -157,6 +157,10 @@ export default {
 }
 
 #map {
-  min-height: calc(100vh - 180px) !important;
+  min-height: calc(100vh - 4rem - 3rem) !important;
+}
+.custom-height-overflow-thing{
+  height: calc(100vh - 112px);
+  overflow: hidden;
 }
 </style>
