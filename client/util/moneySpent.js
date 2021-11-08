@@ -61,6 +61,7 @@ const formattedData = data
 
 const monthIs = (month) => (d) => d.Date.getMonth() === MonthIndex[month];
 const categoryIs = (category) => (d) => d.Category === category;
+const categoryIsNot = (category) => (d) => d.Category !== category;
 
 export const dataPerMonth = {
   January: formattedData.filter(monthIs(MONTHS.January)),
@@ -80,7 +81,11 @@ export const dataPerMonth = {
 
 const getMoneySpent = (month, category) => {
   if (category === CATEGORIES.ALL_CATEGORIES)
-    return Math.abs(dataPerMonth[month].reduce((a, b) => a + b.Amount, 0));
+    return Math.abs(
+      dataPerMonth[month]
+        .filter(categoryIsNot(CATEGORIES.Salary))
+        .reduce((a, b) => a + b.Amount, 0)
+    );
   return Math.abs(
     dataPerMonth[month]
       .filter(categoryIs(category))
@@ -88,7 +93,6 @@ const getMoneySpent = (month, category) => {
   );
 };
 
-getMoneySpent(MONTHS.YEAR, CATEGORIES);
 export default getMoneySpent;
 
 // ***********
