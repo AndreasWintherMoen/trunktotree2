@@ -11,14 +11,16 @@ export default {
   data() {
     return {
       chart: undefined,
+      randoms: [],
     };
   },
   mounted() {
+    this.randoms = this.chartSeries.map((_) => Math.random() + 0.5);
     const options = {
       series: [
         {
           data: this.chartSeries,
-          name: 'NOK spent'
+          name: "NOK spent",
         },
       ],
       chart: {
@@ -39,6 +41,17 @@ export default {
       legend: {
         show: false,
       },
+      colors: this.chartSeries.map((spending, i) => {
+        console.log(
+          `Spending: ${spending}, recommended: ${
+            this.recommendedSpendings[i]
+          }. Color: ${
+            spending > this.recommendedSpendings[i] ? "#F44336" : "#04F336"
+          }`
+        );
+        if (spending < 1000) return "#04F336";
+        return spending > this.recommendedSpendings[i] ? "#F44336" : "#04F336";
+      }),
       xaxis: {
         categories: this.filteredCategories,
         labels: {
@@ -70,6 +83,11 @@ export default {
         return moneySpent(this.monthSelected, cat);
       });
     },
+    recommendedSpendings() {
+      return this.chartSeries.map(
+        (spending, i) => (spending *= this.randoms[i])
+      );
+    },
   },
   watch: {
     monthSelected() {
@@ -82,6 +100,9 @@ export default {
         xaxis: {
           categories: this.filteredCategories,
         },
+        colors: this.chartSeries.map((spending, i) =>
+          spending > this.recommendedSpendings[i] ? "#F44336" : "#04F336"
+        ),
       });
     },
   },

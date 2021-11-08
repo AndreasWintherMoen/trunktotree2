@@ -7,6 +7,22 @@ const accounts = [
 ];
 const ACCOUNT_ID = accounts[Math.floor(Math.random() * accounts.length)];
 
+//export const THRESHOLDS = {
+//  DiningOut: 1500,
+//  Savings: 5000,
+//  Groceries: 10000,
+//  Loans: -1,
+//  Shopping: 1000,
+//  Insurance: 1000,
+//  Home: 1000,
+//  Salary: -1,
+//  Utilities: "Utilities",
+//  Subscriptions: "Subscriptions",
+//  Travel: "Travel",
+//  Other: "Other",
+//  ALL_CATEGORIES: "ALL_CATEGORIES",
+//}
+
 export const MONTHS = {
   January: "January",
   February: "February",
