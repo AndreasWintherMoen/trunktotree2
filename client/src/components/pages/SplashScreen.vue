@@ -1,5 +1,5 @@
 <template>
-  <div :class="{ loader: true, fadeout: !isLoading }">
+  <div class="z-50" :class="{ loader: true, fadeout: !isLoading }">
     <!-- <img
       class="w-10/12 mb-8"
       src="../../assets/images/LogoFull.png"

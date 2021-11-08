@@ -8,7 +8,7 @@ const routes = [
   },
   {
     path: "/insights",
-    name: "Insights",
+    name: "Ecologic health",
     component: () => import("../components/pages/Insights.vue"),
   },
   {

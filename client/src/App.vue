@@ -2,65 +2,16 @@
   <div>
     <splash-screen :isLoading="isLoading" />
     <div v-if="!isLoading">
-      <div class="flex content-center flex-grow h-12 dnb-green" />
-      <div
-        id="nav"
-        class="
-          flex
-          sm:hidden
-          flex-grow flex-wrap
-          justify-center
-          content-center
-          px-8
-        "
-      >
+      <div class="flex items-center justify-center h-12 dnb-green">
         <h3 class="font-bold text-lg">{{getRoute}}</h3>
       </div>
       <router-view class="custom-min-height" />
       <div class="h-16"></div>
-      <div
-        id="nav"
-        class="
-          fixed
-          bottom-0
-          min-w-full
-          dnb-green
-          h-16
-          flex flex-row
-          items-center
-          justify-between
-          px-24
-        "
-      >
-        <router-link
-          to="/"
-          class="rounded-full bg-opacity-50 bg-green-400 p-1.5"
-          ><img
-            class="nav-img"
-            :src="`${publicPath}home-outline.png`"
-            alt="Home"
-        /></router-link>
-        <router-link
-          to="/challenges"
-          class="rounded-full bg-opacity-50 bg-green-400 p-1.5"
-          ><img
-            class="nav-img"
-            :src="`${publicPath}calendar-check-outline.png`"
-            alt="Challenges"
-        /></router-link>
-        <router-link
-          to="/map"
-          class="rounded-full bg-opacity-50 bg-green-400 p-1.5"
-          ><img class="nav-img" :src="`${publicPath}map-outline.png`" alt="Map"
-        /></router-link>
+      <div id="nav" class="fixed bottom-0 min-w-full dnb-green h-16 flex flex-row items-center justify-between px-24">
+          <router-link to="/" class="rounded-full bg-opacity-50 bg-green-400 p-1.5"><img class="nav-img" :src="`${publicPath}home-outline.png`" alt="Home"></router-link>
+          <router-link to="/insights" class="rounded-full bg-opacity-50 bg-green-400 p-1.5"><img class="nav-img" :src="`${publicPath}lightbulb-outline.png`" alt="Challenges"></router-link>
+          <router-link to="/map" class="rounded-full bg-opacity-50 bg-green-400 p-1.5"><img class="nav-img" :src="`${publicPath}map-outline.png`" alt="Map"></router-link>
       </div>
-    </div>
-    <router-view class="custom-min-height" />
-    <div class="h-16"></div>
-    <div id="nav"  class="fixed bottom-0 min-w-full dnb-green h-16 flex flex-row items-center justify-between px-24">
-        <router-link to="/" class="rounded-full bg-opacity-50 bg-green-400 p-1.5"><img class="nav-img" :src="`${publicPath}home-outline.png`" alt="Home"></router-link>
-        <router-link to="/insights" class="rounded-full bg-opacity-50 bg-green-400 p-1.5"><img class="nav-img" :src="`${publicPath}lightbulb-outline.png`" alt="Challenges"></router-link>
-        <router-link to="/map" class="rounded-full bg-opacity-50 bg-green-400 p-1.5"><img class="nav-img" :src="`${publicPath}map-outline.png`" alt="Map"></router-link>
     </div>
   </div>
 </template>
