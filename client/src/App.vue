@@ -3,14 +3,61 @@
     <splash-screen :isLoading="isLoading" />
     <div v-if="!isLoading">
       <div class="flex items-center justify-center h-12 dnb-green">
-        <h3 class="font-bold text-lg">{{getRoute}}</h3>
+        <h3 class="font-bold text-lg">{{ getRoute }}</h3>
       </div>
       <router-view class="custom-min-height" />
       <div class="h-16"></div>
-      <div id="nav" class="fixed bottom-0 min-w-full dnb-green h-16 flex flex-row items-center justify-between px-24">
-          <router-link to="/" class="rounded-full bg-opacity-50 bg-green-400 p-1.5"><img class="nav-img" :src="`${publicPath}home-outline.png`" alt="Home"></router-link>
-          <router-link to="/insights" class="rounded-full bg-opacity-50 bg-green-400 p-1.5"><img class="nav-img" :src="`${publicPath}lightbulb-outline.png`" alt="Challenges"></router-link>
-          <router-link to="/map" class="rounded-full bg-opacity-50 bg-green-400 p-1.5"><img class="nav-img" :src="`${publicPath}map-outline.png`" alt="Map"></router-link>
+      <div
+        id="nav"
+        class="
+          fixed
+          bottom-0
+          min-w-full
+          dnb-green
+          h-16
+          flex flex-row
+          items-center
+          justify-around
+          px-8
+        "
+      >
+        <router-link
+          to="/"
+          class="rounded-full bg-opacity-50 bg-green-400 p-1.5"
+          ><img
+            class="nav-img"
+            :src="`${publicPath}home-outline.png`"
+            alt="Home"
+        /></router-link>
+        <router-link
+          to="/economichealth"
+          class="rounded-full bg-opacity-50 bg-green-400 p-1.5"
+          ><img
+            class="nav-img"
+            :src="`${publicPath}home-outline.png`"
+            alt="Economic Health"
+        /></router-link>
+        <router-link
+          to="/ecologichealth"
+          class="rounded-full bg-opacity-50 bg-green-400 p-1.5"
+          ><img
+            class="nav-img"
+            :src="`${publicPath}home-outline.png`"
+            alt="Ecologic Health"
+        /></router-link>
+        <router-link
+          to="/insights"
+          class="rounded-full bg-opacity-50 bg-green-400 p-1.5"
+          ><img
+            class="nav-img"
+            :src="`${publicPath}lightbulb-outline.png`"
+            alt="Challenges"
+        /></router-link>
+        <router-link
+          to="/map"
+          class="rounded-full bg-opacity-50 bg-green-400 p-1.5"
+          ><img class="nav-img" :src="`${publicPath}map-outline.png`" alt="Map"
+        /></router-link>
       </div>
     </div>
   </div>
@@ -35,10 +82,10 @@ export default {
     }, 2500);
   },
   computed: {
-    getRoute(){
+    getRoute() {
       return this.$route.name;
-    }
-  }
+    },
+  },
 };
 </script>
 

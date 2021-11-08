@@ -3,8 +3,18 @@ import { createRouter, createWebHistory } from "vue-router";
 const routes = [
   {
     path: "/",
-    name: "Economic health",
+    name: "My Status",
     component: () => import("../components/pages/Dashboard.vue"),
+  },
+  {
+    path: "/economicalhealth",
+    name: "Economical Health",
+    component: () => import("../components/pages/EconomicHealth.vue"),
+  },
+  {
+    path: "/ecologicalhealth",
+    name: "Ecological Health",
+    component: () => import("../components/pages/EcologicHealth.vue"),
   },
   {
     path: "/insights",

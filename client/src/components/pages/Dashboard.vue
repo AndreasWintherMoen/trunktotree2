@@ -1,16 +1,24 @@
 <template>
   <div class="p-3">
     <div class="flex flex-col gap-3">
-      <month-selector />
-      <spendings-card :chartName="'Financial health'" :chartId="'financial-health'" />
-      <spendings-card :chartName="'Ecologic health'" :chartId="'ecologic-health'" />
+      <!-- <month-selector /> -->
+      <spendings-card
+        :chartName="'Economic health'"
+        :chartId="'economic-health'"
+        :bg-color="'linear-gradient(170deg, #4b9eaf, #0450ac)'"
+      />
+      <spendings-card
+        :chartName="'Ecologic health'"
+        :chartId="'ecologic-health'"
+        :bg-color="'linear-gradient(45deg, #3b9e3f, #34a07c)'"
+      />
     </div>
   </div>
 </template>
 
 <script>
 import SpendingsCard from "../molecules/SpendingsCard.vue";
-import MonthSelector from "../molecules/MonthSelector.vue";
+// import MonthSelector from "../molecules/MonthSelector.vue";
 
 export default {
   data() {
@@ -18,7 +26,7 @@ export default {
   },
   components: {
     SpendingsCard,
-    MonthSelector,
+    // MonthSelector,
   },
 };
 </script>

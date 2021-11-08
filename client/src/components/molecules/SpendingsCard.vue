@@ -1,7 +1,7 @@
 <template>
-  <div class="px-3 pt-3 rounded-lg shadow spending-card">
+  <div class="px-3 pt-3 rounded-lg shadow" :style="{ background: bgColor }">
     <h1 class="text-white text-center text-xl h-auto">
-      {{chartName}}
+      {{ chartName }}
     </h1>
     <circle-chart class="custom-card-margin" :chartid="chartId" />
   </div>
@@ -11,7 +11,7 @@
 import CircleChart from "../atoms/CircleChart.vue";
 
 export default {
-  props: ['chartId', 'chartName'],
+  props: ["chartId", "chartName", "bgColor"],
   components: {
     CircleChart,
   },
@@ -19,10 +19,7 @@ export default {
 </script>
 
 <style>
-.spending-card {
-  background: linear-gradient(45deg, #1bcedf, #0470dc)
-}
-.custom-card-margin{
+.custom-card-margin {
   margin: -6.5px auto;
 }
 </style>
