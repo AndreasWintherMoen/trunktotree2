@@ -1,19 +1,15 @@
 <template>
   <div class="p-3">
-    <!--<h1 class="m-2 text-lg font-bold">My spendings</h1>
-    <div class="divider"></div>-->
     <div class="flex flex-col gap-3">
       <month-selector />
-      <spendings-card />
-      <bar-chart-card />
+      <spendings-card :chartName="'Financial health'" :chartId="'financial-health'" />
+      <spendings-card :chartName="'Ecologic health'" :chartId="'ecologic-health'" />
     </div>
   </div>
 </template>
 
 <script>
 import SpendingsCard from "../molecules/SpendingsCard.vue";
-/*import LineChartCard from "../molecules/LineChartCard.vue";*/
-import BarChartCard from "../molecules/BarChartCard.vue";
 import MonthSelector from "../molecules/MonthSelector.vue";
 
 export default {
@@ -22,8 +18,6 @@ export default {
   },
   components: {
     SpendingsCard,
-    BarChartCard,
-    /*LineChartCard,*/
     MonthSelector,
   },
 };

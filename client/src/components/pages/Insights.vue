@@ -1,6 +1,5 @@
 <template>
   <div class="p-4">
-    <h2 class="font-bold text-xl pb-4">Challenges</h2>
     <div class="flex flex-col gap-3">
       <challenge
         class="cursor-pointer"
@@ -24,8 +23,8 @@ export default {
     return {
       challenges: [
         {
-          text: "Deposit 1200kr to DNB Grønn",
-          reward: 999,
+          text: "You're spending a lot more than your peers, noob!",
+          reward: -999,
         },
         {
           text: "Reduce your café spending this month by at least 300kr",
