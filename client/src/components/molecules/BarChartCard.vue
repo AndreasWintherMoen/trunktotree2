@@ -1,7 +1,7 @@
 <template>
-    <div class="px-3 pt-3 rounded-lg shadow">
-        <h1 class="text-white text-left text-xl h-auto">
-        This is a title :)
+    <div class="px-3 pt-3 rounded-lg shadow" id="barchart-cart">
+        <h1 class="text-white text-center text-xl h-auto">
+        Spending categories
         </h1>
         <bar-chart :chartid="'barchart'" />
     </div>
@@ -18,4 +18,7 @@ export default {
 </script>
 
 <style>
+#barchart-cart {
+    background: #0e4166;
+}
 </style>

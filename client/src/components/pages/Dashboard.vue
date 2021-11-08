@@ -1,6 +1,7 @@
 <template>
   <div class="p-3">
-    <h1>Mine Penger</h1>
+    <!--<h1 class="text-lg font-bold m-2">My spendings</h1>
+    <div class="divider"></div>-->
     <div class="flex flex-col gap-3">
       <spendings-card />
       <bar-chart-card />
@@ -22,4 +23,11 @@ export default {
 };
 </script>
 
-<style></style>
+<style>
+.divider {
+  width: 4rem;
+  height: 0.25rem;
+  background: #2c3e50;
+  margin: 0 auto 1rem;
+}
+</style>

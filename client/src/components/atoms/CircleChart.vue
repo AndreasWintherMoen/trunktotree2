@@ -1,5 +1,7 @@
 <template>
-  <div :id="chartid"></div>
+  <div>
+    <div :id="chartid" class="capitalize"></div>
+  </div>
 </template>
 
 <script>
@@ -8,15 +10,17 @@ import ApexCharts from "apexcharts";
 export default {
   props: ['chartid'],
   mounted() {
-    var month = new Date().toLocaleString("default", { month: "long" });
+    const month = new Date().toLocaleString("default", { month: "long" });
+    const moneySpent = Math.random() * 100000;
+    const moneyLimit = (moneySpent + Math.random() * 100000) / 100;
 
-    var options = {
+    const options = {
       chart: {
         height: 300,
         type: "radialBar",
       },
-      series: [67],
-      colors: ["rgba(32, 255, 24, 0.6)"],
+      series: [(moneySpent / moneyLimit)],
+      colors: ["#0ba29d"],
       plotOptions: {
         radialBar: {
           hollow: {
@@ -24,7 +28,7 @@ export default {
             size: "60%",
           },
           track: {
-            background: "rgba(255,255,255,0.2)",
+            background: "rgba(255,255,255,0.5)",
             dropShadow: {
               enabled: true,
               top: 2,
@@ -36,14 +40,15 @@ export default {
           dataLabels: {
             value: {
               color: "#fff",
-              fontSize: "2em",
+              fontSize: "1.25rem",
               show: true,
-              formatter: function (val) {
-                return val + " NOK";
+              formatter: function () {
+                return moneySpent.toFixed(2) + " NOK";
               },
+              offsetY: -20
             },
             name: {
-              offsetY: -10,
+              offsetY: 20,
               color: "#fff",
               fontSize: "13px",
             },
