@@ -71,6 +71,22 @@ export const CATEGORIES = {
   ALL_CATEGORIES: "ALL_CATEGORIES",
 };
 
+export const READABLE_CATEGORIES = {
+  DiningOut: "Dining Out",
+  Savings: "Savings",
+  Groceries: "Groceries",
+  Loans: "Loans",
+  Shopping: "Shopping",
+  Insurance: "Insurance",
+  Home: "Home",
+  Salary: "Salary",
+  Utilities: "Utilities",
+  Subscriptions: "Subscriptions",
+  Travel: "Travel",
+  Other: "Other",
+  ALL_CATEGORIES: "ALL_CATEGORIES",
+};
+
 const formattedData = data
   .filter((d) => d.AccountID === ACCOUNT_ID)
   .map((d) => {
