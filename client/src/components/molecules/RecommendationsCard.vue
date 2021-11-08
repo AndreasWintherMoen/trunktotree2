@@ -1,8 +1,10 @@
 <template>
-  <div class="mx-4 px-3 pt-3 rounded-lg shadow">
+  <div>
     <h1 class="h-auto text-xl text-center">Recommendations</h1>
     <!-- <div class="h-32 bg-pink-300"></div> -->
-    <recommendation v-for="(r, i) in recommendations" :key="i" :text="r" />
+    <div class="p-4 flex flex-col gap-3">
+      <recommendation v-for="(r, i) in recommendations" :key="i" :text="r" />
+    </div>
   </div>
 </template>
 
