@@ -1,5 +1,7 @@
 import data from "../../data/kontoutskrift.json";
 
+const ACCOUNT_ID = 100000;
+
 export const MONTHS = {
   January: "January",
   February: "February",
@@ -48,12 +50,14 @@ export const CATEGORIES = {
   ALL_CATEGORIES: "ALL_CATEGORIES",
 };
 
-const formattedData = data.map((d) => {
-  return {
-    ...d,
-    Date: new Date(d["Date"]),
-  };
-});
+const formattedData = data
+  .filter((d) => d.AccountID === ACCOUNT_ID)
+  .map((d) => {
+    return {
+      ...d,
+      Date: new Date(d["Date"]),
+    };
+  });
 
 const monthIs = (month) => (d) => d.Date.getMonth() === MonthIndex[month];
 const categoryIs = (category) => (d) => d.Category === category;
