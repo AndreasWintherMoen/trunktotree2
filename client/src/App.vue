@@ -4,23 +4,6 @@
       <div
         id="nav"
         class="
-          flex-wrap
-          content-center
-          justify-between
-          flex-grow
-          hidden
-          px-8
-          sm:flex
-        "
-      >
-        <router-link to="/">Home</router-link>
-        <router-link to="/account">Account</router-link>
-        <router-link to="/challenges">Challenges</router-link>
-        <router-link to="/forest">My Forest</router-link>
-      </div>
-      <div
-        id="nav"
-        class="
           flex
           sm:hidden
           flex-grow flex-wrap
@@ -32,19 +15,21 @@
         <h3 class="font-bold text-lg">EcoreHealth+</h3>
       </div>
     </div>
-    <router-view />
+    <router-view class="custom-min-height" />
+    <div class="h-16"></div>
+    <div id="nav"  class="fixed bottom-0 min-w-full dnb-green h-16 flex flex-row items-center justify-between px-24">
+        <router-link to="/" class="rounded-full bg-opacity-50 bg-green-400 p-1.5"><img class="nav-img" :src="`${publicPath}home-outline.png`" alt="Home"></router-link>
+        <router-link to="/challenges" class="rounded-full bg-opacity-50 bg-green-400 p-1.5"><img class="nav-img" :src="`${publicPath}calendar-check-outline.png`" alt="Challenges"></router-link>
+        <router-link to="/map" class="rounded-full bg-opacity-50 bg-green-400 p-1.5"><img class="nav-img" :src="`${publicPath}map-outline.png`" alt="Map"></router-link>
+    </div>
   </div>
 </template>
 
 <script>
-import { ref } from "vue";
-
 export default {
   setup() {
-    const sidebar = ref(false);
-    const toggleSidebar = () => (sidebar.value = !sidebar.value);
-
-    return { sidebar, toggleSidebar };
+    const publicPath = process.env.BASE_URL
+    return {publicPath}
   },
 };
 </script>
@@ -77,5 +62,14 @@ body {
 
 #nav a.router-link-exact-active {
   color: #22b171;
+}
+
+.custom-min-height{
+  min-height: calc(100% + 10rem) !important;
+}
+
+.nav-img{
+  width: 32px;
+  margin: 0 auto;
 }
 </style>

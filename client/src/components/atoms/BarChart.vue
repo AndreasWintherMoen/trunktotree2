@@ -18,6 +18,7 @@ export default {
       series: [
         {
           data: this.chartSeries,
+          name: 'NOK spent'
         },
       ],
       chart: {

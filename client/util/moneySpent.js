@@ -80,14 +80,15 @@ export const dataPerMonth = {
 };
 
 const getMoneySpent = (month, category) => {
+  const monthCapped = month.charAt(0).toUpperCase() + month.slice(1);
   if (category === CATEGORIES.ALL_CATEGORIES)
     return Math.abs(
-      dataPerMonth[month]
+      dataPerMonth[monthCapped]
         .filter(categoryIsNot(CATEGORIES.Salary))
         .reduce((a, b) => a + b.Amount, 0)
     );
   return Math.abs(
-    dataPerMonth[month]
+    dataPerMonth[monthCapped]
       .filter(categoryIs(category))
       .reduce((a, b) => a + b.Amount, 0)
   );

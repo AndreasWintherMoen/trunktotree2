@@ -1,7 +1,6 @@
 <template>
   <div class="p-3">
     <h1 class="text-lg font-bold m-2">My spendings</h1>
-    <div class="divider"></div>
     <div id="map" class="overflow-hidden relative">
     </div>
   </div>
@@ -72,6 +71,10 @@ export default {
                     },
                 labelLayerId
         );
+        function onClick(e){
+          console.log(e);
+        }
+        map.on('click', onClick);
         map.addLayer({
 				id: 'custom_layer',
 				type: 'custom',
@@ -98,11 +101,11 @@ export default {
           spendingBars.forEach(sb => {
             const p1 = sb[0];
             const p2 = sb[1];
-            console.log(p1);
-            console.log(p2);
             const color = p2[2] > 50 ? p2[2] > 100 ? '#880808' : '#FFBF00' : '#088F8F';
-            console.log(color);
-            const line = window.tb.line({geometry: [p1, p2], color: color, opacity: 1, width: 20, /*radius: 0.25, sides: 50, closed: true*/})
+            const line = window.tb.line({geometry: [p1, p2], color: color, opacity: 1, width: 20})
+            line.addEventListener('ObjectMouseOver', onObjectMouseOver, false);
+            line.addEventListener('click', () => {console.log("fuck")}, false);
+            line.addEventListener('ObjectMouseOut', onObjectMouseOut, false);
             window.tb.add(line);
           })
           //const geometry = new THREE.CylinderGeometry(500, 500, 604, 302);
@@ -121,14 +124,14 @@ export default {
 					window.tb.update();
 				}
 			})
-    //     function onObjectMouseOver(e) {
-		// 	console.log("ObjectMouseOver: " + e.detail.name);
-		// }
+      function onObjectMouseOver(e) {
+        console.log("ObjectMouseOver: " + e.detail.name);
+      }
 
 		// actions to execute onObjectMouseOut
-		// function onObjectMouseOut(e) {
-		// 	console.log("ObjectMouseOut: " + e.detail.name);
-		// }
+      function onObjectMouseOut(e) {
+        console.log("ObjectMouseOut: " + e.detail.name);
+      }
     });
     }
 }
