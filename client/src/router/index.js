@@ -18,7 +18,7 @@ const routes = [
   },
   {
     path: "/insights",
-    name: "Ecologic health",
+    name: "Ecological health",
     component: () => import("../components/pages/Insights.vue"),
   },
   {

@@ -23,7 +23,8 @@
       >
         <router-link
           to="/"
-          class="rounded-full bg-opacity-50 bg-green-400 p-1.5"
+          class="rounded-full p-1.5"
+          :class="getRoute === 'My Status' ? ['bg-opacity-50','bg-white'] : ['bg-opacity-50', 'bg-green-400']"
           ><img
             class="nav-img"
             :src="`${publicPath}home-outline.png`"
@@ -31,7 +32,8 @@
         /></router-link>
         <router-link
           to="/economicalhealth"
-          class="rounded-full bg-opacity-50 bg-green-400 p-1.5"
+          class="rounded-full p-1.5"
+          :class="getRoute === 'Economical Health' ? ['bg-opacity-50','bg-white'] : ['bg-opacity-50', 'bg-green-400']"
           ><img
             class="nav-img"
             :src="`${publicPath}account-cash-outline.png`"
@@ -39,7 +41,8 @@
         /></router-link>
         <router-link
           to="/ecologicalhealth"
-          class="rounded-full bg-opacity-50 bg-green-400 p-1.5"
+          class="rounded-full p-1.5"
+          :class="getRoute === 'Ecological Health' ? ['bg-opacity-50','bg-white'] : ['bg-opacity-50', 'bg-green-400']"
           ><img
             class="nav-img"
             :src="`${publicPath}sprout-outline.png`"
@@ -55,7 +58,8 @@
         /></router-link>
         <router-link
           to="/map"
-          class="rounded-full bg-opacity-50 bg-green-400 p-1.5"
+          class="rounded-full p-1.5"
+          :class="getRoute === 'Map' ? ['bg-opacity-50','bg-white'] : ['bg-opacity-50', 'bg-green-400']"
           ><img class="nav-img" :src="`${publicPath}map-outline.png`" alt="Map"
         /></router-link>
       </div>
