@@ -2,7 +2,7 @@
   <div>
     <h1 class="h-auto text-xl text-center">Recommendations</h1>
     <!-- <div class="h-32 bg-pink-300"></div> -->
-    <div class="p-4 flex flex-col gap-3">
+    <div class="p-2 flex flex-col gap-2">
       <recommendation
         v-for="(r, i) in recommendations"
         :key="i"

@@ -18,8 +18,8 @@ export default {
   },
   data() {
     return {
-      active: "bg-green-900 shadow-md",
-      unactive: "bg-green-500 shadow-xl",
+      active: "bg-custom-green-700",
+      unactive: "bg-custom-green-600 bg-opacity-50",
     };
   },
   methods: {

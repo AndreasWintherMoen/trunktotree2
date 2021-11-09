@@ -1,5 +1,9 @@
 <template>
   <div class="custom-height-overflow-thing">
+    <div class="fixed z-50 flex flex-row justify-between min-w-full px-6 pt-3">
+      <div v-for="(spending, i) in spendings" :key="i" :style="{backgroundColor: spending[1]}"
+      class="px-2 py-1 shadow-lg text-white">{{spending[0]}}</div>
+    </div>
     <div id="map" class="overflow-hidden w-full relative">
     </div>
   </div>
@@ -11,6 +15,11 @@ import { Threebox } from "threebox-plugin";
 //import * as THREE from 'three';
 
 export default {
+  data() {
+    return {
+      spendings: [["High spending", "#880808"], ["Average", "#FFBF00"], ["Low spending", "#088F8F"]],
+    }
+  },
   mounted() {
     mapboxgl.accessToken =
       "pk.eyJ1Ijoia3BhdWJlcnQiLCJhIjoiY2ttdjNkYzExMDFiNDJ1dXRkNm5oOGZsbiJ9.wvZBsJ9IkgzKfwnh2ViL7g";
@@ -91,6 +100,15 @@ export default {
             [10.395018675344572, 63.4225019798139],
             [10.455773596322523, 63.43625450704843],
             [10.396887985230316, 63.434221498463906],
+            [10.404581534731896, 63.41718405775894],
+            [10.404590027624556, 63.41544182079662],
+            [10.393711860229807, 63.42231163059591],
+            [10.389414987646084, 63.42906684922667],
+            [10.392830154453655, 63.429374544107226],
+            [10.390637002340226, 63.43183598403111],
+            [10.397070788297452, 63.433095580322195],
+            [10.40261436501754, 63.43398957052721],
+            [10.400887144474696, 63.434878343342504],
           ];
 
           const spendingBars = spendingPlaces.map((p) => [
@@ -109,15 +127,7 @@ export default {
               opacity: 1,
               width: 20,
             });
-            line.addEventListener("ObjectMouseOver", onObjectMouseOver, false);
-            line.addEventListener(
-              "click",
-              () => {
-                console.log("fuck");
-              },
-              false
-            );
-            line.addEventListener("ObjectMouseOut", onObjectMouseOut, false);
+            
             window.tb.add(line);
           });
           //const geometry = new THREE.CylinderGeometry(500, 500, 604, 302);

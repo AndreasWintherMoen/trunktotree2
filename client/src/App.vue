@@ -2,65 +2,64 @@
   <div>
     <splash-screen :isLoading="isLoading" />
     <div v-if="!isLoading">
-      <div class="flex items-center justify-center h-12 dnb-green">
-        <h3 class="font-bold text-lg">{{ getRoute }}</h3>
+      <div class="flex items-center justify-center h-12 bg-custom-green-700">
+        <h3 class="font-bold text-lg text-custom-green-100">{{ getRoute }}</h3>
       </div>
-      <router-view class="custom-min-height" />
-      <div class="h-16"></div>
+      <router-view class="custom-min-height bg-custom-green-100" />
+      <div class="h-16 bg-custom-green-100"></div>
       <div
         id="nav"
         class="
           fixed
           bottom-0
           min-w-full
-          dnb-green
           h-16
-          flex flex-row
+          flex
+          flex-row
           items-center
           justify-around
-          px-8
         "
       >
         <router-link
           to="/"
-          class="rounded-full p-1.5"
-          :class="getRoute === 'My Status' ? ['bg-opacity-50','bg-white'] : ['bg-opacity-50', 'bg-green-400']"
+          class=" min-h-full flex-grow flex items-center"
+          :class="getRoute === 'My Status' ? ['bg-opacity-100','bg-custom-green-700'] : ['bg-opacity-100', 'bg-custom-green-600']"
           ><img
             class="nav-img"
-            :src="`${publicPath}home-outline.png`"
+            :src="getRoute === 'My Status' ? `${publicPath}home-outline-w.png` : `${publicPath}home-outline.png`"
             alt="Home"
         /></router-link>
         <router-link
           to="/economicalhealth"
-          class="rounded-full p-1.5"
-          :class="getRoute === 'Economical Health' ? ['bg-opacity-50','bg-white'] : ['bg-opacity-50', 'bg-green-400']"
+          class="min-h-full flex-grow flex items-center"
+          :class="getRoute === 'Economical Health' ? ['bg-opacity-100','bg-custom-green-700'] : ['bg-opacity-100', 'bg-custom-green-600']"
           ><img
             class="nav-img"
-            :src="`${publicPath}account-cash-outline.png`"
+            :src="getRoute === 'Economical Health' ? `${publicPath}account-cash-outline-w.png` : `${publicPath}account-cash-outline.png`"
             alt="Economical Health"
         /></router-link>
         <router-link
           to="/ecologicalhealth"
-          class="rounded-full p-1.5"
-          :class="getRoute === 'Ecological Health' ? ['bg-opacity-50','bg-white'] : ['bg-opacity-50', 'bg-green-400']"
+          class="min-h-full flex-grow flex items-center"
+          :class="getRoute === 'Ecological Health' ? ['bg-opacity-100','bg-custom-green-700'] : ['bg-opacity-100', 'bg-custom-green-600']"
           ><img
             class="nav-img"
-            :src="`${publicPath}sprout-outline.png`"
+            :src="getRoute === 'Ecological Health' ? `${publicPath}sprout-outline-w.png` : `${publicPath}sprout-outline.png`"
             alt="Ecological Health"
         /></router-link>
-        <router-link
+        <!--<router-link
           to="/insights"
           class="rounded-full bg-opacity-50 bg-green-400 p-1.5"
           ><img
             class="nav-img"
-            :src="`${publicPath}lightbulb-outline.png`"
+            :src="`${publicPath}lightbulb-outline-w.png`"
             alt="Challenges"
-        /></router-link>
+        /></router-link>-->
         <router-link
           to="/map"
-          class="rounded-full p-1.5"
-          :class="getRoute === 'Map' ? ['bg-opacity-50','bg-white'] : ['bg-opacity-50', 'bg-green-400']"
-          ><img class="nav-img" :src="`${publicPath}map-outline.png`" alt="Map"
+          class="min-h-full flex-grow flex items-center"
+          :class="getRoute === 'Spendings map' ? ['bg-opacity-100','bg-custom-green-700'] : ['bg-opacity-100', 'bg-custom-green-600']"
+          ><img class="nav-img" :src="getRoute === 'Spendings map' ? `${publicPath}map-outline-w.png` : `${publicPath}map-outline.png`" alt="Map"
         /></router-link>
       </div>
     </div>
@@ -128,7 +127,8 @@ body {
 }
 
 .nav-img {
-  width: 32px;
+  height: 2rem;
+  width: 2rem;
   margin: 0 auto;
 }
 </style>

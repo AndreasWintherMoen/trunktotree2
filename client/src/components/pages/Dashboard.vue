@@ -1,6 +1,6 @@
 <template>
-  <div class="p-3">
-    <div class="flex flex-col gap-3">
+  <div class="p-2">
+    <div class="flex flex-col gap-3 bg-custom-green-100">
       <!-- <month-selector /> -->
       <spendings-card
         :chartName="'Economic health'"

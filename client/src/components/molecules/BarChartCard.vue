@@ -1,7 +1,7 @@
 <template>
-  <div class="mx-4 px-3 pt-3 rounded-lg shadow" id="barchart-cart">
+  <div class="px-3 pt-3 shadow" id="barchart-cart">
     <h1 class="h-auto text-xl text-center text-white">Spending categories</h1>
-    <bar-chart :chartid="'barchart'" />
+    <bar-chart class="-mb-6" :chartid="'barchart'" />
   </div>
 </template>
 
@@ -15,6 +15,6 @@ export default {
 
 <style>
 #barchart-cart {
-  background: #0e4166;
+  background: linear-gradient(45deg, #0e4166, #0e71a6)
 }
 </style>
