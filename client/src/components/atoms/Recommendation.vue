@@ -12,9 +12,13 @@
         <div
           class="flex-col text-left ml-2"
           :class="isPositive ? ['bg-green'] : ['bg-red']"
-        >
-          <p class="text-lg font-bold">{{ recommendation.category }}</p>
+        >  
+          <p class="text-lg font-bold">{{ recommendation.category }}</p>        
           <p>{{ recommendation.text }}</p>
+          <div class="flex flex-row items-center justify-end pr-3">
+            <p class="text-sm float-right pr-1 text-blue-700">Click to see more</p>
+            <img class="w-3 h-3" :src="`${publicPath}open-in-new-b.png`">
+          </div>
         </div>
       </div>
     </a>

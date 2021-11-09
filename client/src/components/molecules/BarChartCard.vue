@@ -15,6 +15,6 @@ export default {
 
 <style>
 #barchart-cart {
-  background: linear-gradient(45deg, #0e4166, #0e71a6)
+  background: #2c3e50; /*linear-gradient(45deg, #0e4166, #0e71a6)*/
 }
 </style>
