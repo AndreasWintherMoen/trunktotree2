@@ -21,24 +21,24 @@ export default {
     return {
       recommendations: [
         {
-          text: "Du bruker 17% mer strøm enn gjennomsnittet. Trykk her for å lære mer om hvordan du kan kutte ditt strømforbruk",
+          text: "You spend 17% more on electricity than the average person with similar income. Click here to find out how you can reduce your electricity bill.",
           category: CATEGORIES.Utilities,
           isPositive: false,
           url: "https://tibber.com/no/magazine/power-hacks/5-stromsparetips",
         },
         {
-          text: "Du bruker 25% mindre enn gjennomsnittet på kafébesøk. Bra jobba!",
+          text: "You spend 25% less than the average person at cafés. Good job!",
           category: CATEGORIES.DiningOut,
           isPositive: true,
         },
         {
-          text: "Du bruker 20% mer enn anbefalt på matvarer. Klikk her for å se våre sparetips i matbutikken!",
+          text: "You spend 20% more than recommended on groceries. Click here to see our saving tips at the grocery store!",
           category: CATEGORIES.Groceries,
           isPositive: false,
           url: "https://www.kulinarisk.no/17-mater-a-spare-penger-pa-mat/",
         },
         {
-          text: "Du bruker 45% mer enn gjennomsnittet på nattklubber. Uff da!",
+          text: "You spend 45% more than the average person at night clubs. Oof!",
           category: CATEGORIES.DiningOut,
           isPositive: false,
         },
