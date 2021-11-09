@@ -1,10 +1,10 @@
 <template>
   <div
     :class="isActive ? active : unactive"
-    class="inline-block cursor-pointer rounded-2xl"
+    class="inline-block cursor-pointer rounded-2xl px-2 py-1"
     @click="updateMonth"
   >
-    <p class="m-2 text-white">{{ month }}</p>
+    <p class="text-custom-green-100">{{ month }}</p>
   </div>
 </template>
 

@@ -24,7 +24,7 @@ export default {
         },
       ],
       chart: {
-        height: 350,
+        height: 250,
         type: "bar",
         toolbar: { show: false },
         foreColor: "white",
@@ -61,6 +61,7 @@ export default {
         },
       },
     };
+    console.log(this.chartid)
     this.chart = new ApexCharts(
       document.querySelector(`#${this.chartid}`),
       options

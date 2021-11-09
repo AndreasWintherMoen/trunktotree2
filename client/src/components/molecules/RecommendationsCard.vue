@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <h1 class="h-auto text-xl text-center">Recommendations</h1>
+  <div :style="{backgroundColor: '#2c3e50'}">
+    <h1 class="h-auto text-xl pt-3 pb-1 text-center text-custom-green-100">Insights</h1>
     <!-- <div class="h-32 bg-pink-300"></div> -->
     <div class="p-2 flex flex-col gap-2">
       <recommendation

@@ -1,5 +1,29 @@
 <template>
-  <div :id="chartid" class="bg-custom-green-100"></div>
+    <div class="flex flex-col p-2">
+        <div class="flex flex-row items-center justify-between">
+            <p class="text-sm">Where's my money?</p>
+            <div class="flex flex-row justify-end">
+                <div class="flex flex-col justify-end">
+                    <p class="text-md text-right text-custom-green-500 font-bold">{{availableBalance}}.00 NOK</p>
+                    <p class="text-sm text-right font-bold">Available balance</p>
+                </div>
+                <img class="" :src="`${publicPath}currency-usd.png`">
+            </div>
+        </div>
+        <div class="ml-2 flex flex-row">
+            <div :id="chartid" class="-ml-6 bg-custom-green-100 overflow-hidden"></div>
+            <div class="px-2 mb-8 flex flex-col justify-center text-left" id="pos-neg-desc-container">
+                <div class="flex flex-col">
+                    <p class="text-sm">Balance</p>
+                    <p class="text-sm font-bold">3,700M</p>
+                </div>
+                <div class="flex flex-col">
+                    <p class="text-sm">Loans</p>
+                    <p class="text-sm font-bold">450K</p>
+                </div>
+            </div>
+        </div>
+    </div>
 </template>
 
 <script>
@@ -7,13 +31,19 @@ import ApexCharts from "apexcharts";
 
 export default {
     props: ['chartid'],
+    setup() {
+        const publicPath = process.env.BASE_URL;
+        return { publicPath };
+    },
     data() {
         return {
-            chart: undefined
+            chart: undefined,
+            options: {}
         }
     },
     mounted(){
-        var options = {
+        console.log(this.chartid)
+        this.options = {
           series: [{
           name: 'Assets',
           data: [{
@@ -232,7 +262,7 @@ export default {
         }],
         chart: {
           type: 'area',
-          height: 350,
+          height: 270,
           toolbar: { show: false },
           foreColor: "#2c3e50"
         },
@@ -240,7 +270,7 @@ export default {
           enabled: false
         },
         stroke: {
-          curve: 'straight'
+          curve: 'smooth'
         },
         
         title: {
@@ -250,6 +280,7 @@ export default {
           }
         },
         xaxis: {
+          show: false,
           type: 'datetime',
           axisBorder: {
             show: false
@@ -259,6 +290,7 @@ export default {
           }
         },
         yaxis: {
+          show: false,
           tickAmount: 4,
           floating: false,
         
@@ -300,8 +332,19 @@ export default {
         }
         };
 
-        var chart = new ApexCharts(document.querySelector("#positive-negative"), options);
+        var chart = new ApexCharts(document.querySelector(`#${this.chartid}`), this.options);
         chart.render();
+    },
+    computed: {
+        availableBalance(){
+            if (!this.options){
+                return '0';
+            }
+            //const val = this.options.series[0].data[this.options.series[0].data.length - 1].y - this.options.series[1].data[this.options.series[1].data.length - 1].y;
+            //return val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+            const val = 3250000;
+            return val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+        }
     }
 }
 </script>

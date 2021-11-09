@@ -1,6 +1,6 @@
 <template>
     <div>
-        <h1 class="h-auto text-xl text-center">Liquidity over time</h1>
+        <h1 class="h-auto text-xl text-center">Yearly spendings</h1>
         <positive-negative-chart :chartid="'positive-negative'" />
     </div>
 </template>
