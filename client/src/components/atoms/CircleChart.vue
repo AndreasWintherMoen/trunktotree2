@@ -1,18 +1,16 @@
 <template>
   <div>
-    <div
-      :id="chartid"
-      class="capitalize"
-    />
+    <div :id="chartid" class="capitalize" />
+    <div class="typical">Recommended<br />64 000 NOK</div>
   </div>
 </template>
 
 <script>
-import ApexCharts from 'apexcharts';
-import moneySpent, { CATEGORIES } from '../../../util/moneySpent';
+import ApexCharts from "apexcharts";
+import moneySpent, { CATEGORIES } from "../../../util/moneySpent";
 
 export default {
-  props: ['chartid'],
+  props: ["chartid"],
   data() {
     return {
       chart: undefined,
@@ -42,18 +40,24 @@ export default {
     const options = {
       chart: {
         height: 300,
-        type: 'radialBar',
+        type: "radialBar",
       },
-      series: [this.moneyTotal / this.moneyLimit],
-      colors: ['#0ba29d'],
+      // series: [this.moneyTotal / this.moneyLimit],
+      series: [80],
+      colors: ["#0bd2bd"],
       plotOptions: {
         radialBar: {
           hollow: {
             margin: 0,
-            size: '60%',
+            size: "60%",
+            background: "rgba(255,255,255,0.1)",
           },
           track: {
-            background: 'rgba(255,255,255,0.5)',
+            // background: "rgba(255,255,255,0.5)",
+            background: ["#ce82ee"],
+            strokeWidth: "150%",
+            startAngle: -90,
+            endAngle: -86,
             dropShadow: {
               enabled: true,
               top: 2,
@@ -64,25 +68,36 @@ export default {
           },
           dataLabels: {
             value: {
-              color: '#fff',
-              fontSize: '1.25rem',
+              color: "#fff",
+              fontSize: "1.25rem",
               show: true,
               formatter: () => `${this.moneyTotal.toFixed(2)} NOK`,
+              // formatter: () => "80%",
               offsetY: -20,
             },
             name: {
               offsetY: 20,
-              color: '#fff',
-              fontSize: '13px',
+              color: "#fff",
+              fontSize: "12px",
+            },
+            total: {
+              show: true,
+              label: `${this.monthSelected} Spending`,
+              color: "#fff",
+              fontSize: "11px",
+              formatter: () => {
+                // By default this function returns the average of all series. The below is just an example to show the use of custom formatter function
+                return `${this.moneyTotal.toFixed(2)} NOK`;
+              },
             },
           },
         },
       },
-      labels: [`${this.monthSelected} Spending`],
+      labels: ["November spending"],
     };
     this.chart = new ApexCharts(
       document.querySelector(`#${this.chartid}`),
-      options,
+      options
     );
 
     this.chart.render();
@@ -90,4 +105,13 @@ export default {
 };
 </script>
 
-<style></style>
+<style>
+.typical {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translateY(30px);
+  color: #ee82ee;
+  font-weight: 400;
+}
+</style>
