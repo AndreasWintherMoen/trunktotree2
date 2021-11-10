@@ -18,6 +18,9 @@ export default {
       return Object.values(MONTHS).filter((m) => m !== MONTHS.YEAR);
     },
   },
+  mounted() {
+    this.$el.scrollLeft = this.$el.lastElementChild.offsetLeft;
+  },
 };
 </script>
 
@@ -28,5 +31,6 @@ export default {
 
 #scrollingThroughTheMonths {
   scrollbar-width: none;
+  scroll-behavior: smooth;
 }
 </style>
