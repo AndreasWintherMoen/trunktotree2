@@ -7,17 +7,19 @@
         :chartId="'economic-health'"
         :bg-color="'linear-gradient(170deg, #4b9eaf, #0450ac)'"
       />
-      <spendings-card
+      <polar-area-chart-card />
+      <!--<spendings-card
         :chartName="'Ecologic health'"
         :chartId="'ecologic-health'"
         :bg-color="'linear-gradient(45deg, #3b9e3f, #34a07c)'"
-      />
+      />-->
     </div>
   </div>
 </template>
 
 <script>
 import SpendingsCard from "../molecules/SpendingsCard.vue";
+import PolarAreaChartCard from "../molecules/PolarAreaChartCard.vue";
 // import MonthSelector from "../molecules/MonthSelector.vue";
 
 export default {
@@ -26,6 +28,7 @@ export default {
   },
   components: {
     SpendingsCard,
+    PolarAreaChartCard
     // MonthSelector,
   },
 };
