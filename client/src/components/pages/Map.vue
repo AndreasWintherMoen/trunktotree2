@@ -1,24 +1,34 @@
 <template>
   <div class="custom-height-overflow-thing">
     <div class="fixed z-50 flex flex-row justify-between min-w-full px-6 pt-3">
-      <div v-for="(spending, i) in spendings" :key="i" :style="{backgroundColor: spending[1]}"
-      class="px-2 py-1 shadow-lg text-white">{{spending[0]}}</div>
+      <div
+        v-for="(spending, i) in spendings"
+        :key="i"
+        :style="{ backgroundColor: spending[1] }"
+        class="px-2 py-1 shadow-lg text-white"
+      >
+        {{ spending[0] }}
+      </div>
     </div>
-    <div id="map" class="overflow-hidden w-full relative">
-    </div>
+    <div id="map" class="overflow-hidden w-full relative"></div>
   </div>
 </template>
 
 <script>
 import mapboxgl from "mapbox-gl/dist/mapbox-gl";
 import { Threebox } from "threebox-plugin";
+import generateSpendingBars from "../../../util/generateSpendingBars";
 //import * as THREE from 'three';
 
 export default {
   data() {
     return {
-      spendings: [["High spending", "#880808"], ["Average", "#FFBF00"], ["Low spending", "#088F8F"]],
-    }
+      spendings: [
+        ["High spending", "#880808"],
+        ["Average", "#FFBF00"],
+        ["Low spending", "#088F8F"],
+      ],
+    };
   },
   mounted() {
     mapboxgl.accessToken =
@@ -88,35 +98,14 @@ export default {
         id: "custom_layer",
         type: "custom",
         renderingMode: "3d",
-        onAdd: function (map, mbxContext) {
+        onAdd: (map, mbxContext) => {
           // instantiate threebox
           window.tb = new Threebox(map, mbxContext, {
             defaultLights: true,
             enableSelectingObjects: true,
           });
-          const spendingPlaces = [
-            [10.39663147730713, 63.41914312134928],
-            [10.395455205122646, 63.41952046378666],
-            [10.395018675344572, 63.4225019798139],
-            [10.455773596322523, 63.43625450704843],
-            [10.396887985230316, 63.434221498463906],
-            [10.404581534731896, 63.41718405775894],
-            [10.404590027624556, 63.41544182079662],
-            [10.393711860229807, 63.42231163059591],
-            [10.389414987646084, 63.42906684922667],
-            [10.392830154453655, 63.429374544107226],
-            [10.390637002340226, 63.43183598403111],
-            [10.397070788297452, 63.433095580322195],
-            [10.40261436501754, 63.43398957052721],
-            [10.400887144474696, 63.434878343342504],
-          ];
 
-          const spendingBars = spendingPlaces.map((p) => [
-            [p[0], p[1], 0],
-            [p[0], p[1], Math.floor(Math.random() * 150)],
-          ]);
-
-          spendingBars.forEach((sb) => {
+          this.$store.state.spendingBars.forEach((sb) => {
             const p1 = sb[0];
             const p2 = sb[1];
             const color =
@@ -127,9 +116,9 @@ export default {
               opacity: 1,
               width: 20,
             });
-            
             window.tb.add(line);
           });
+
           //const geometry = new THREE.CylinderGeometry(500, 500, 604, 302);
           //const geometry2 = new THREE.CylinderGeometry(10, 10, 100, 64);
           //instantiate a red sphere and position it at the origin lnglat
@@ -169,7 +158,7 @@ export default {
 #map {
   min-height: calc(100vh - 4rem - 3rem) !important;
 }
-.custom-height-overflow-thing{
+.custom-height-overflow-thing {
   height: calc(100vh - 112px);
   overflow: hidden;
 }
