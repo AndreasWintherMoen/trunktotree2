@@ -1,6 +1,6 @@
 <template>
-  <div class="px-3 pt-3 shadow" id="barchart-cart">
-    <h1 class="h-auto text-xl text-center text-white">Spending categories</h1>
+  <div class="mt-2 focus-within:px-3 pt-2 shadow" id="barchart-cart">
+    <h1 class="h-auto text-xl text-center text-custom-green-100">Spending categories</h1>
     <bar-chart class="-mb-6" :chartid="'barchart'" />
   </div>
 </template>

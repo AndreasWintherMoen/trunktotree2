@@ -1,5 +1,5 @@
 <template>
-    <div class="flex flex-col p-2">
+    <div class="flex flex-col px-2 pt-2">
         <div class="flex flex-row items-center justify-between">
             <p class="text-sm">Where's my money?</p>
             <div class="flex flex-row justify-end">

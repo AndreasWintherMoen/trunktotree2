@@ -35,7 +35,7 @@ export default {
       "pk.eyJ1Ijoia3BhdWJlcnQiLCJhIjoiY2ttdjNkYzExMDFiNDJ1dXRkNm5oOGZsbiJ9.wvZBsJ9IkgzKfwnh2ViL7g";
     const map = new mapboxgl.Map({
       style: "mapbox://styles/mapbox/light-v10",
-      center: [10.404585947517468, 63.417000711297895],
+      center: [10.401085947517468, 63.42250711297895],
       zoom: 13.5,
       pitch: 45,
       bearing: -17.6,

@@ -12,7 +12,8 @@ module.exports = {
           '500': '#05386B',
           '600': '#00a57d',
           '700': '#098e6f'
-        }
+        },
+        'custom-blue': '#2c3e50'
       },
       colors: {
         'custom-green': {
@@ -23,7 +24,8 @@ module.exports = {
           '500': '#05386B',
           '600': '#00a57d',
           '700': '#098e6f'
-        }
+        },
+        'custom-blue': '#2c3e50'
       }
     },
   },

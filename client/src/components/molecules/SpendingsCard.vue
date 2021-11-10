@@ -1,5 +1,5 @@
 <template>
-  <div class="px-3 pt-3 rounded-lg shadow" :style="{ background: bgColor }">
+  <div class="px-3 pt-3 rounded-lg shadow bg-custom-blue"><!--:style="{ background: bgColor }"-->
     <h1 class="text-white text-center text-xl h-auto">
       {{ chartName }}
     </h1>

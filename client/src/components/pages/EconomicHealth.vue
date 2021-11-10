@@ -1,5 +1,5 @@
 <template>
-  <div class="pt-2 flex flex-col gap-2">
+  <div class="pt-2 flex flex-col">
     <month-selector />
     <bar-chart-card />
     <positive-negative-card />

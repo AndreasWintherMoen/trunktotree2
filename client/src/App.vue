@@ -123,7 +123,7 @@ body {
 }
 
 .custom-min-height {
-  min-height: calc(100% + 10rem) !important;
+  min-height: calc(100vh - 7rem) !important;
 }
 
 .nav-img {
