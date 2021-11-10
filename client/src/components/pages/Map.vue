@@ -5,7 +5,7 @@
         v-for="(spending, i) in spendings"
         :key="i"
         :style="{ backgroundColor: spending[1] }"
-        class="px-2 py-1 shadow-lg text-white"
+        class="px-2 py-1 shadow-lg text-white text-sm"
       >
         {{ spending[0] }}
       </div>
@@ -90,10 +90,6 @@ export default {
         },
         labelLayerId
       );
-      function onClick(e) {
-        console.log(e);
-      }
-      map.on("click", onClick);
       map.addLayer({
         id: "custom_layer",
         type: "custom",
@@ -118,30 +114,12 @@ export default {
             });
             window.tb.add(line);
           });
-
-          //const geometry = new THREE.CylinderGeometry(500, 500, 604, 302);
-          //const geometry2 = new THREE.CylinderGeometry(10, 10, 100, 64);
-          //instantiate a red sphere and position it at the origin lnglat
-          // var tube = window.tb.line({geometry: [pointOne, pointTwo], color: '#00f', opacity: 0.5, width: 20, /*radius: 0.25, sides: 50, closed: true*/})
-          /*.setCoords([10.404585947517468,63.417000711297895]);*/
-          //tube.addEventListener('ObjectMouseOver', onObjectMouseOver, false);
-          //tube.addEventListener('ObjectMouseOut', onObjectMouseOut, false);
-          // add sphere to the scene
-          //window.tb.add(tube);
         },
 
         render: function () {
           window.tb.update();
         },
       });
-      function onObjectMouseOver(e) {
-        console.log("ObjectMouseOver: " + e.detail.name);
-      }
-
-      // actions to execute onObjectMouseOut
-      function onObjectMouseOut(e) {
-        console.log("ObjectMouseOut: " + e.detail.name);
-      }
     });
   },
 };
