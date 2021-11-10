@@ -26,7 +26,7 @@
           :class="getRoute === 'My Status' ? ['bg-opacity-100','bg-custom-green-700'] : ['bg-opacity-100', 'bg-custom-green-600']"
           ><img
             class="nav-img"
-            :src="getRoute === 'My Status' ? `${publicPath}home-outline-w.png` : `${publicPath}home-outline.png`"
+            :src="getRoute === 'My Status' ? `${publicPath}home-outline-g.png` : `${publicPath}home-outline.png`"
             alt="Home"
         /></router-link>
         <router-link
@@ -35,7 +35,7 @@
           :class="getRoute === 'Economical Health' ? ['bg-opacity-100','bg-custom-green-700'] : ['bg-opacity-100', 'bg-custom-green-600']"
           ><img
             class="nav-img"
-            :src="getRoute === 'Economical Health' ? `${publicPath}account-cash-outline-w.png` : `${publicPath}account-cash-outline.png`"
+            :src="getRoute === 'Economical Health' ? `${publicPath}account-cash-outline-g.png` : `${publicPath}account-cash-outline.png`"
             alt="Economical Health"
         /></router-link>
         <router-link
@@ -44,7 +44,7 @@
           :class="getRoute === 'Ecological Health' ? ['bg-opacity-100','bg-custom-green-700'] : ['bg-opacity-100', 'bg-custom-green-600']"
           ><img
             class="nav-img"
-            :src="getRoute === 'Ecological Health' ? `${publicPath}sprout-outline-w.png` : `${publicPath}sprout-outline.png`"
+            :src="getRoute === 'Ecological Health' ? `${publicPath}sprout-outline-g.png` : `${publicPath}sprout-outline.png`"
             alt="Ecological Health"
         /></router-link>
         <!--<router-link
@@ -59,7 +59,7 @@
           to="/map"
           class="min-h-full flex-grow flex items-center"
           :class="getRoute === 'Spendings map' ? ['bg-opacity-100','bg-custom-green-700'] : ['bg-opacity-100', 'bg-custom-green-600']"
-          ><img class="nav-img" :src="getRoute === 'Spendings map' ? `${publicPath}map-outline-w.png` : `${publicPath}map-outline.png`" alt="Map"
+          ><img class="nav-img" :src="getRoute === 'Spendings map' ? `${publicPath}map-outline-g.png` : `${publicPath}map-outline.png`" alt="Map"
         /></router-link>
       </div>
     </div>
