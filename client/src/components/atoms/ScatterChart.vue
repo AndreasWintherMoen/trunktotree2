@@ -50,6 +50,12 @@ export default {
             }
           }
         },
+        legend: {
+          labels: {
+            colors: ['rgba(237, 245, 225, 1)']
+          }
+          
+        },
         yaxis: {
           tickAmount: 7
         }
@@ -61,6 +67,7 @@ export default {
 }
 </script>
 
-<style>
-
+<style scoped>
+  span.apexcharts-legend-text {
+  }
 </style>

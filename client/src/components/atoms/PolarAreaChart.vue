@@ -29,6 +29,9 @@ export default {
           position: 'right',
           offsetY: -20,
           offsetX: 0,
+          labels: {
+            colors: ['rgba(237, 245, 225, 1)']
+          }
         }
         };
 
@@ -42,9 +45,6 @@ export default {
     .apexcharts-legend-series {
         text-align: left !important;
         
-    }
-    .apexcharts-legend-text {
-        color: rgba(237, 245, 225, 1) !important;
     }
     .apexcharts-legend.apexcharts-align-center.apx-legend-position-right{
       overflow: hidden;

@@ -272,7 +272,11 @@ export default {
         stroke: {
           curve: 'smooth'
         },
-        
+        legend:  {
+          labels: {
+            colors: ['rgba(44, 62, 80, 1)']
+          }
+        },
         title: {
           align: 'left',
           style: {
@@ -349,6 +353,7 @@ export default {
 }
 </script>
 
-<style>
-
+<style scoped>
+  span.apexcharts-legend-text {
+  }
 </style>
