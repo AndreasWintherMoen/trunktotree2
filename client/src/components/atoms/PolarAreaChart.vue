@@ -17,10 +17,10 @@ export default {
     const options = {
           series: this.chartSeries,
           chart: {
-          height: 300,
+          height: 310,
           type: 'donut',
         },
-        labels: ['Public transit', 'Ecologic/local food', 'Sustainable purchases', 'Gas', 'Airplane travel', 'Heating'],
+        labels: ['Public transit', 'Ecologic/local food', 'Sustainable purchases', 'Fuel', 'Airplane travel', 'Heating'],
         colors: ['#10bcad', '#10bcad', '#10bcad', '#ff4560', '#ff4560', '#ff4560'],
         dataLabels: {
           enabled: false
@@ -45,5 +45,8 @@ export default {
     }
     .apexcharts-legend-text {
         color: rgba(237, 245, 225, 1) !important;
+    }
+    .apexcharts-legend.apexcharts-align-center.apx-legend-position-right{
+      overflow: hidden;
     }
 </style>

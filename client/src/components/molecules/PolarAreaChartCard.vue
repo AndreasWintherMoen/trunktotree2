@@ -1,7 +1,7 @@
 <template>
   <div class="rounded-lg p-1 pb-4 shadow bg-custom-blue">
     <h1 class="text-center text-xl h-auto text-custom-green-100 py-2">
-      Carbon footprint
+      Ecological footprint
     </h1>
     <polar-area-chart :chartSeries="chartSeries" :chartid="'polarareachart'" />
     <div class="flex flex-row px-8 pt-2 items-center">

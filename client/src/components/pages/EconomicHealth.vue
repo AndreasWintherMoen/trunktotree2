@@ -4,11 +4,13 @@
     <bar-chart-card />
     <positive-negative-card />
     <recommendations-card />
+    <information-card />
   </div>
 </template>
 
 <script>
 import BarChartCard from "../molecules/BarChartCard.vue";
+import InformationCard from '../molecules/InformationCard.vue';
 import MonthSelector from "../molecules/MonthSelector.vue";
 import PositiveNegativeCard from '../molecules/PositiveNegativeCard.vue';
 import RecommendationsCard from "../molecules/RecommendationsCard.vue";
@@ -18,6 +20,7 @@ export default {
     MonthSelector,
     RecommendationsCard,
     PositiveNegativeCard,
+    InformationCard,
   },
 };
 </script>

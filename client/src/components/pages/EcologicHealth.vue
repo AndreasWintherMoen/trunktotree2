@@ -1,9 +1,16 @@
 <template>
-  <div>Ecological Health</div>
+  <div class="p-2">
+    <scatter-chart-card />
+  </div>
 </template>
 
 <script>
-export default {};
+import ScatterChartCard from '../molecules/ScatterChartCard.vue';
+export default {
+  components: { 
+    ScatterChartCard 
+  }
+};
 </script>
 
 <style></style>
