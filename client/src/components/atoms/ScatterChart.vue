@@ -1,5 +1,5 @@
 <template>
-  <div class="min-w-full" :id="chartid"></div>
+  <div class="scatter-chart-custom-padding overflow-hidden" :id="chartid"></div>
 </template>
 
 <script>
@@ -19,56 +19,28 @@ export default {
           {
             data: [
               {
-                x: 'INTC',
-                y: 1.2
+                x: 'Fuel',
+                y: -2.500
               },
               {
-                x: 'GS',
-                y: 0.4
+                x: 'Airplane travel',
+                y: -3.500
               },
               {
-                x: 'CVX',
-                y: -1.4
+                x: 'Heating',
+                y: -3.100
               },
               {
-                x: 'GE',
-                y: 2.7
+                x: 'Public transit',
+                y: 1.500
               },
               {
-                x: 'CAT',
-                y: -0.3
+                x: 'Ecological/local food',
+                y: 7.250
               },
               {
-                x: 'RTX',
-                y: 5.1
-              },
-              {
-                x: 'CSCO',
-                y: -2.3
-              },
-              {
-                x: 'JNJ',
-                y: 2.1
-              },
-              {
-                x: 'PG',
-                y: 0.3
-              },
-              {
-                x: 'TRV',
-                y: 0.12
-              },
-              {
-                x: 'MMM',
-                y: -2.31
-              },
-              {
-                x: 'NKE',
-                y: 3.98
-              },
-              {
-                x: 'IYT',
-                y: 1.67
+                x: 'Sustainable purchases',
+                y: 19.900
               }
             ]
           }
@@ -77,7 +49,8 @@ export default {
           show: false
         },
         chart: {
-          height: 360,
+          width: '100%',
+          height: 400,
           type: 'treemap',
           toolbar: { show: false },
         },
@@ -87,7 +60,7 @@ export default {
             fontSize: '12px',
           },
           formatter: function(text, op) {
-            return [text, op.value]
+            return [text, `${op.value}K NOK`]
           },
           offsetY: -4
         },
@@ -121,4 +94,7 @@ export default {
 </script>
 
 <style scoped>
+  .scatter-chart-custom-padding {
+    padding-left: 1.5vw;
+  }
 </style>
