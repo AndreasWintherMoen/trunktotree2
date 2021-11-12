@@ -6,9 +6,9 @@
         <h3 class="font-bold text-lg text-custom-green-100">{{ getRoute }}</h3>
       </div>
       <keep-alive>
-        <router-view class="custom-min-height bg-custom-green-100" v-if="$route.meta.keepAlive"></router-view>
+        <router-view class="custom-min-height bg-custom-green-100"></router-view>
       </keep-alive>
-      <router-view class="custom-min-height bg-custom-green-100" v-if="!$route.meta.keepAlive"></router-view>
+      <!--<router-view class="custom-min-height bg-custom-green-100" v-if="!$route.meta.keepAlive"></router-view>-->
       <!--<router-view />-->
       <div class="h-16 bg-custom-green-100"></div>
       <div
