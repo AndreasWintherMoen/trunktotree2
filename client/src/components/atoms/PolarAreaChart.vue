@@ -47,6 +47,6 @@ export default {
         
     }
     .apexcharts-legend.apexcharts-align-center.apx-legend-position-right{
-      overflow: hidden;
+      /*overflow: hidden;*/
     }
 </style>
