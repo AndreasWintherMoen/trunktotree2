@@ -25,6 +25,7 @@ const routes = [
     path: "/map",
     name: "Spendings map",
     component: () => import("../components/pages/Map.vue"),
+    meta: {keepAlive: true}
   },
 ];
 

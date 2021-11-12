@@ -5,7 +5,11 @@
       <div class="flex items-center justify-center h-12 bg-custom-green-700">
         <h3 class="font-bold text-lg text-custom-green-100">{{ getRoute }}</h3>
       </div>
-      <router-view class="custom-min-height bg-custom-green-100" />
+      <keep-alive>
+        <router-view class="custom-min-height bg-custom-green-100" v-if="$route.meta.keepAlive"></router-view>
+      </keep-alive>
+      <router-view class="custom-min-height bg-custom-green-100" v-if="!$route.meta.keepAlive"></router-view>
+      <!--<router-view />-->
       <div class="h-16 bg-custom-green-100"></div>
       <div
         id="nav"
