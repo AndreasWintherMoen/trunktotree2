@@ -1,7 +1,7 @@
 <template>
   <div>
     <div :id="chartid" class="capitalize" />
-    <div class="typical">Recommended<br />64 000 NOK</div>
+    <div class="typical">Recommended<br />{{recommendedSpending}} NOK</div>
   </div>
 </template>
 
@@ -27,6 +27,10 @@ export default {
     moneyLimit() {
       return (this.moneyTotal + Math.random() * 100000) / 100;
     },
+    recommendedSpending() {
+      const recSpending = this.moneyTotal * 0.9;
+      return recSpending.toFixed(2);
+    }
   },
   watch: {
     monthSelected() {

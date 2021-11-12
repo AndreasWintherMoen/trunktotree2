@@ -1,5 +1,5 @@
 <template>
-  <div class="p-2">
+  <div>
     <scatter-chart-card />
   </div>
 </template>
